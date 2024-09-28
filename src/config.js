@@ -29,6 +29,12 @@ export const UNIFIED_RULES = [
 		ip_rules: []
 	},
 	{
+	  name: 'FCM',
+	  outbound: '📣 FCM',
+	  site_rules: ['googlefcm'],
+	  ip_rules: []
+	},
+	{
 		name: 'Google',
 		outbound: '🔍 谷歌服务',
 		site_rules: ['google'],
@@ -111,12 +117,6 @@ export const UNIFIED_RULES = [
 		name: 'Cloud Services',
 		outbound: '☁️ 云服务',
 		site_rules: ['aws', 'azure', 'digitalocean', 'heroku', 'dropbox'],
-		ip_rules: []
-	  },
-	  {
-		name: 'FCM',
-		outbound: '📣 FCM',
-		site_rules: ['googlefcm'],
 		ip_rules: []
 	  }
 
