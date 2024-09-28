@@ -156,7 +156,7 @@ export function getOutbounds(selectedRuleNames) {
 }
 
 // Helper function to generate rules based on selected rule names
-export function generateRules(selectedRules = [], customRules = [], pin = false) {
+export function generateRules(selectedRules = [], customRules = [], pin) {
 	if (typeof selectedRules === 'string' && PREDEFINED_RULE_SETS[selectedRules]) {
 	  selectedRules = PREDEFINED_RULE_SETS[selectedRules];
 	}
@@ -179,7 +179,7 @@ export function generateRules(selectedRules = [], customRules = [], pin = false)
 	  }
 	});
   
-	if (customRules && customRules.length > 0 && pin === false) {
+	if (customRules && customRules.length > 0 && pin !== "true") {
 		customRules.forEach((rule) => {
 		  rules.push({
 			site_rules: rule.site.split(','),
@@ -191,7 +191,7 @@ export function generateRules(selectedRules = [], customRules = [], pin = false)
 		  });
 		});
 	}
-	else if (customRules && customRules.length > 0 && pin === true) {
+	else if (customRules && customRules.length > 0 && pin === "true") {
 		customRules.reverse();
 		customRules.forEach((rule) => {
 			rules.unshift({
